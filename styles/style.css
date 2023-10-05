@@ -44,6 +44,11 @@ body{
     text-decoration: none;
     font-size: 13px;
     font-weight: var(--font-weight-lg);
+    transition: all 1s ease;
+}
+.header-nav a:hover{
+    font-size: 15px;
+    transform: scale(1);
 }
 
 /* MAIN */
@@ -52,10 +57,17 @@ body{
     position: relative;
     padding-bottom: 50px;
 }
-.section-welcome h1{
+.section-welcome--title{
+    display: flex;
+    flex-wrap: wrap;
+}
+.section-welcome--title h1{
     font-size: 280px;
     padding-left: 20px;
-    color: rgb(75, 0, 0);
+    color: #4b0000;
+}
+.section-welcome--title h1:hover{
+    color: #770000;
 }
 .section-welcome .section-welcome-name{
     position: absolute;
@@ -74,6 +86,15 @@ body{
 .section-about--text{
     font-size: 24px;
     width: 65%;
+}
+.section-about .section-title-container .section--title-lg {
+    transition: all 1s ease;
+}
+.section-about .section-title-container .section--title-lg:hover{
+    color: #611616;
+    font-size: 90px;
+    line-height: 3rem;
+    transform: scale(1);
 }
     /* FOTOS */
 .images-container{
@@ -135,8 +156,16 @@ body{
     padding: 200px 80px 100px;
 }
 .section-skills-tools--icons-container .fa-brands{
-    font-size: 60px;
+    font-size: 55px;
     color: #3d3d3d;
+    transition: all 1s ease;
+    
+
+}
+.section-skills-tools--icons-container .fa-brands:hover{
+    color: #611616;
+    font-size: 70px;
+    transform: scale(1);
 }
 
 /* SECTION WORKS */
@@ -160,6 +189,11 @@ body{
     object-fit: cover;
     border-radius: 10px;
 }
+.section-works--article:hover{
+    background: linear-gradient(#4b000000,#4b000000), url('../captura-ej.png'), no-repeat;
+    color: transparent;
+    outline: 2px solid #611616;
+}
 .section-works--article h3{
     font-family: var(--font);
     font-size: 40px;
@@ -182,14 +216,26 @@ body{
     width: 50%;
     margin-bottom: 100px;
 }
-.section-contact button{
+.button-contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #3d3d3d;
+    color: #3d3d3d;
     border-radius: 40px;
     width: 300px;
     height: 70px;
     font-size: 16px;
     background-color: transparent;
     margin-bottom: 100px;
+    text-decoration: none;
+}
+.button-contact:hover{
+    box-shadow: -20px 22px 81px -17px rgb(97 22 22 / 58%);
+}
+.button-contact:focus{
+    background-color:  #611616;
+    color: white;
 }
 .section-contact--rrss{
     display: flex;
@@ -202,17 +248,22 @@ body{
     justify-content: space-between;
     padding: 10px;
     border-top: 1px solid #3d3d3d;
+    color: #3d3d3d;
+    text-decoration: none;
 }
-.section-contact--rrss-container div a{
+.section-contact--rrss-container h3{
     font-size: 20px;
     padding-bottom: 5px;
     text-decoration: none;
     color: #3d3d3d;
 }
-.section-contact--rrss-container div p{
+.section-contact--rrss-container p{
     font-size: 14px;
     color: #3d3d3db4;
 }
 .section-contact--rrss-container .fa-brands{
     font-size: 30px;
+}
+.section-contact--rrss-container:hover{
+    color: #611616;
 }
