@@ -1,8 +1,19 @@
-const body = document.querySelector('body');
 const scrollButton = document.querySelector('.up-scroll');
+const mobileMenuButton = document.querySelector('.mobile-menu');
+const mobileMenuContainer = document.querySelector('.menu-toggle');
 
-scrollButton.addEventListener('click', scrollTop)
+scrollButton.addEventListener('click', scrollToTop)
+mobileMenuButton.addEventListener('click', toggleMenuMobile)
 
-function scrollTop (){
-    body.scrollTop = 0;
+function scrollToTop (){
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Desplazamiento suave
+    });
+}
+
+function toggleMenuMobile () {
+    mobileMenuContainer.classList.toggle('open')
+    
+
 }
