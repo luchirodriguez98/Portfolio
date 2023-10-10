@@ -1,4 +1,3 @@
-/* MOVIL */
 :root{
     --font: 'Droid', sans-serif;
     --size-sm: 1.25rem;
@@ -12,19 +11,27 @@
     --color-primary-red-100:#611616;
 }
 /* GENERALES */
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Oswald', sans-serif;
     background-color: rgb(255, 255, 247);
     color: var(--color-primary-gray);
+    overflow-x: hidden;
 }
 main{
+    position: relative;
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 0.2fr 1fr 0.8fr 1fr 0.8fr;
+    align-items: start;
     margin: 0 auto;
-    width: 95%;
+    padding: 0 10px;
+    width: 100%;
 }
-.section-welcome, .section-about, .section-skills-tools, .section-works{
-    margin-bottom: 30px;
+.section-about, .section-skills-tools, .section-works, .section-contact{
+    margin-top: 40px;
+    padding-top: 40px;
 }
 .section-title-container {
     line-height: 3.5rem;
@@ -34,10 +41,28 @@ main{
     font-family: var(--font);
     letter-spacing: -0.05rem;
     text-align: center;
+    margin-bottom: 30px;
 }
 .section--title-sm{
     display: none;
     text-align: end;
+}
+/* UP SCROLL */
+.up-scroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary-red-100);
+    border-radius: 50%;
+    bottom: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+.up-scroll .fa-solid{
+    color: white;
 }
 /* HEADER */
 .header{
@@ -57,13 +82,30 @@ main{
 }
 .header-nav a{
     display: none;
-    color: rgb(48, 48, 48);
+    color: #0000;
     text-decoration: none;
     font-size: 1rem;
     font-weight: var(--font-weight-lg);
-    transition: all 1s ease;
+    
+    /* HOVER */
+    line-height: 1.2em;
+    color: transparent;
+    text-shadow: 
+        0 0 black,
+        0 1.2em var(--color-primary-red-100);
+    overflow: hidden;
+    transition: 0.3s;
+}
+.header-nav a:hover{
+    text-shadow: 
+        0 -1.2em black,
+        0 0 var(--color-primary-red-100);
+
 }
 /* S. WELCOME */
+.section-welcome{
+    margin-bottom: 40px;
+}
 .section-welcome--title h1 {
     font-size: 23vw;
     color: #4b0000;
@@ -83,6 +125,15 @@ main{
     text-align: center;
     width: 80%;
     margin: 1rem auto 2rem;
+}
+.section-about .section-title-container .section--title-lg {
+    transition: all 1s ease;
+}
+.section-about .section-title-container .section--title-lg:hover{
+    color: var(--color-primary-red-100);
+    font-size: 5.5rem;
+    line-height: 1.5rem;
+    transform: scale(1);
 }
 .section-about--images {
     display: grid;
@@ -140,26 +191,146 @@ main{
     padding-top: 5rem;
 }
 .section-skills-tools--icons-container .fa-brands {
-    font-size: var(--size-m);
+    font-size: 3rem;
     color: var(--color-primary-gray);
     transition: all 1s ease;
 }
+.section-skills-tools--icons-container .fa-brands:hover{
+    color: var(--color-primary-red-100);
+    font-size: 4rem;
+    transform: scale(1);
+}
+/* S WORKS */
+.section-works{
+    font-size: 19vw;
+}
+.section-works--articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section-works--article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 7.5rem;
+    height: 7.5rem;
+    background: #4b0000b2;
+    color: aliceblue;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+.section-works--article:hover{
+    background: linear-gradient(#4b000000,#4b000000), url('../captura-ej.png'), no-repeat;
+    color: transparent;
+    outline: 2px solid var(--color-primary-red-100);
+}
+.section-works--article h3{
+    font-size: 2rem;
+    font-family: var(--font);
+    width: 60%;
+    border-bottom: 1px solid aliceblue;
+}
+.section-works--article p{
+    display: none;
+}
+/* S. CONTACT */
+.section-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-contact h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.button-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-primary-gray-100);
+    color: var(--color-primary-gray);
+    border-radius: 40px;
+    width: 12.5rem;
+    height: 3.12rem;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+    background-color: transparent;
+    text-decoration: none;
+}
+.button-contact:hover{
+    box-shadow: -20px 22px 81px -17px rgb(97 22 22 / 58%);
+}
+.section-contact--rrss {
+    display: flex;
+    justify-content: space-between;
+}
+.section-contact--rrss-container {
+    justify-content: space-between;
+    justify-content: center;
+    padding: 0.62rem;
+    border-top: 1px solid var(--color-primary-gray);
+    color: var(--color-primary-gray);
+    text-decoration: none;
+}
+.section-contact--rrss-container div:first-child {
+    display: none;
+}
+.section-contact--rrss-container h3 {
+    font-size: var(--size-sm);
+    padding-bottom: 0.31rem;
+    text-decoration: none;
+    color: var(--color-primary-gray);
+}
+.section-contact--rrss-container p {
+    font-size: 0.87rem;
+    color: #3d3d3db4;
+}
+.section-contact--rrss-container .fa-brands {
+    font-size: 1.87rem;
+}
+.section-contact--rrss-container:hover .fa-brands {
+    color: var(--color-primary-red-100);
+}
 /* TABLET */
 @media (min-width:425px) {
+    main{
+        grid-template-rows: 0.2fr 1.5fr 1fr 1fr 1fr;
+    }
     .section--title-lg {
         font-size: 4rem;
-    }
-    .section-about {
-        padding-top: 40px;
-    }
+    }   
     .section-skills-tools--icons-container {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr;
     }
-        
+    .section-works--articles {
+        flex-direction: row;
+    }  
+    .section-contact h2{
+        width: 80%;
+    }
+    .section-contact--rrss{
+        width: 80%;
+    }
+    .section-contact--rrss-container {
+        display: flex;
+        width: 80%;
+    }
+    .section-contact--rrss-container div:first-child {
+        display: block;
+        margin-right: 30px;
+    }
 }
 /* LAPTOP */
 @media (min-width:768px) {
+    main{
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
+        align-items: start;
+    }
     .header-nav{
         justify-content: space-between;
     }
@@ -174,9 +345,10 @@ main{
         display: none;
     }
     .section-title-container {
-        line-height: 2.5rem;
+        line-height: 0.7rem;
         text-align: end;
         width: fit-content;
+        margin-bottom: 50px;
     }
     .section--title-lg{
         font-size: 5rem; 
@@ -200,6 +372,8 @@ main{
         text-align: start;
         margin: 0;
         width: 100%;
+        font-size: 25px;
+        color: #3d3d3d;
     }
     .section-about--images {
         display: block;
@@ -220,8 +394,33 @@ main{
         width: 56%;
         left: 95px;
     }
-
     .section-skills-tools--icons-container .fa-brands {
         font-size: 3.5rem;
+    }
+    .section-works--article{
+        width: 20vw;
+        height: 18.75rem;
+        padding: 1.87rem;
+        background: linear-gradient(#4b0000b2,#4b0000b2), url('../captura-ej.png'), no-repeat;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .section-works--article p{
+        display: block;
+        font-size: 1rem;
+        display: block;
+        padding-top: 5px;
+        width: 63%;
+    }
+    .section-contact{
+        height: 100%;
+        justify-content: space-between;
+    }
+    .section-contact h2{
+        width: 50%;
+        margin-bottom: 50px;
+    }
+    .section-contact a{
+        margin-bottom: 50px;
     }
 }
