@@ -376,7 +376,7 @@ main{
         text-align: start;
         margin: 0;
         width: 100%;
-        font-size: 25px;
+        font-size: 28px;
         color: #3d3d3d;
     }
     .section-about--images {
@@ -434,7 +434,12 @@ main{
         margin-bottom: 50px;
     }
 }
-
+@media (min-width:1024px) {
+    .section-about--text{
+        width: 95%;
+        font-size: 32px;
+    }
+}
 
 /* UP SCROLL */
 .up-scroll{
