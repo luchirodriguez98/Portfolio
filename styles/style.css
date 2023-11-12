@@ -230,6 +230,9 @@ main{
     border-radius: 50%;
     margin: 0.5rem;
 }
+.section-works--article {
+    text-decoration: none;
+}
 .section-works--article h3{
     font-size: 2rem;
     font-family: var(--font);
@@ -410,10 +413,21 @@ main{
         transition: background-position 2s ease;
     }
     .section-works--article:hover{
-        background: linear-gradient(298deg, #015249 4%, #0152497a 24%, #ffffff00 49%), url('../captura-ej.png'), no-repeat; 
         color: transparent;
         outline: 2px solid var(--color-primary-green);
         background-position: 2% 2%;
+    }
+    .section-works--articles .section-works--article:nth-child(1):hover{
+        background: linear-gradient(298deg, #015249 4%, #0152497a 24%, #ffffff00 49%), url('../multimedia/taskplanner.png'), no-repeat; 
+    }
+    .section-works--articles .section-works--article:nth-child(2):hover{
+        background: linear-gradient(298deg, #015249 4%, #0152497a 24%, #ffffff00 49%), url('../multimedia/portfolio.png'), no-repeat; 
+    }
+    .section-works--articles .section-works--article:nth-child(3):hover{
+        background: linear-gradient(298deg, #015249 4%, #0152497a 24%, #ffffff00 49%), url('../multimedia/virtushop.png'), no-repeat; 
+    }
+    .section-works--article:hover h3{
+        border-bottom: none;
     }
     .section-works--article p{
         display: block;
