@@ -22,7 +22,7 @@ body{
     background-color: rgb(255, 255, 247);
     color: var(--color-primary-gray);
     overflow-x: hidden;
-    padding: 0 10px;
+    padding: 0 20px;
     width: 100%;
 }
 main{
@@ -61,7 +61,7 @@ main{
 .header-nav{
     display: flex;
     align-items: center;
-    padding: 1rem 1.5rem 0 1rem ;
+    padding: 1rem 2.5rem 0 1rem ;
 }
 .header-nav .fa-solid{
     display: block;
@@ -213,10 +213,12 @@ main{
     font-size: 19vw;
 }
 .section-works--articles {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 .section-works--article{
     display: flex;
@@ -228,7 +230,7 @@ main{
     background: linear-gradient(298deg, rgba(1,82,73,1) 36%, rgba(1,82,73,0.47942927170868344) 69%, rgba(255,255,255,0) 94%);
     color: aliceblue;
     border-radius: 50%;
-    margin: 0.5rem;
+    margin: 0.5rem auto;
 }
 .section-works--article {
     text-decoration: none;
@@ -403,8 +405,17 @@ main{
     .section-skills-tools--icons-container .fa-brands {
         font-size: 3.5rem;
     }
+    .section-works--articles{
+        /* display: grid; */
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        width: 70%;
+        /* gap: 20px; */
+    }
     .section-works--article{
-        width: 20vw;
+        margin: 0 auto;
+        width: 80%;
         height: 18.75rem;
         padding: 1.87rem;
         object-fit: cover;
@@ -425,6 +436,9 @@ main{
     }
     .section-works--articles .section-works--article:nth-child(3):hover{
         background: linear-gradient(298deg, #015249 4%, #0152497a 24%, #ffffff00 49%), url('../multimedia/virtushop.png'), no-repeat; 
+    }
+    .section-works--articles .section-works--article:nth-child(4):hover{
+        background: linear-gradient(298deg, #015249 4%, #0152497a 24%, #ffffff00 49%), url('../multimedia/code4people.png'), no-repeat; 
     }
     .section-works--article:hover h3{
         border-bottom: none;
